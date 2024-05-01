@@ -1,0 +1,15 @@
+{
+  "name": "opal98-app-dev",
+  "version": "1.0.0",
+  "description": "<a target=\"_blank\" href=\"https://heroku.com/deploy/?template=https://github.com/Opal98/Opal98-app\"><img alt=\"Deploy to Heroku\" src=\"https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg\"></a>   <a target=\"_blank\" href=\"https://vercel.com/new/clone?repository-url=https://github.com/opal98/Opal98-app\"><img alt=\"Deploy to Vercel\" src=\"https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg\"></a>",
+  "main": "ABC.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@titaniumnetwork-dev/ultraviolet": "^3.0.2",
+    "express": "^4.19.2"
+  }
+}
