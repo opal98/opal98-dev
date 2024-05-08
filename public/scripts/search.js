@@ -1,51 +1,61 @@
 
-document // makes it so you can press enter to submit as opposed to just being able to press a button
-    .getElementById("urlInput")
-    .addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            document.getElementById("searchButton").click();
-        }
-    });
+// document // makes it so you can press enter to submit as opposed to just being able to press a button
+//     .getElementById("urlInput")
+//     .addEventListener("keydown", function (event) {
+//         if (event.key === "Enter") {
+//             event.preventDefault();
+//             document.getElementById("searchButton").click();
+//         }
+//     });
 
-document.getElementById("searchButton").onclick = function (event) {
-    event.preventDefault();
+// document.getElementById("searchButton").onclick = function (event) {
+//     event.preventDefault();
 
-    let url = document.getElementById("urlInput").value; // if no periods are detected in the input, search google instead
-    let searchUrl = "https://www.google.com/search?q=";
+//     let url = document.getElementById("urlInput").value; // if no periods are detected in the input, search google instead
+//     let searchUrl = "https://www.google.com/search?q=";
 
-    if (!url.includes(".")) {
-        url = searchUrl + encodeURIComponent(url);
-    } else {
-        if (!url.startsWith("http://") && !url.startsWith("https://")) { // if no http or https is detected, add https automatically
-            url = "https://" + url;
-        }
-    }
+//     if (!url.includes(".")) {
+//         url = searchUrl + encodeURIComponent(url);
+//     } else {
+//         if (!url.startsWith("http://") && !url.startsWith("https://")) { // if no http or https is detected, add https automatically
+//             url = "https://" + url;
+//         }
+//     }
 
-    iframeWindow.src = __uv$config.prefix + __uv$config.encodeUrl(url);
-};
+//     iframeWindow.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+// };
 
 // // Searching 
 
-// const form = document.querySelector("form");
-// const input = document.querySelector("input");
+const button = document.getElementById("game-search");
+const input = document.querySelector("input");
 
-// form.addEventListener("submit", async (event) => {
-//     console.log("IT WORKS")
-//   event.preventDefault();
-//   window.navigator.serviceWorker
-//     .register("./sw.js", {
-//       scope: __uv$config.prefix,
-//     })
-//     .then(() => {
-//       let url = input.value.trim();
-//       if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
-//       else if (!(url.startsWith("https://") || url.startsWith("http://")))
-//         url = "http://" + url;
-//       sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
-//       location.href = "go";
-//     });
-// });
+button.addEventListener("keydown", function (e) {
+    if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+        console.log("entered!")
+        event.preventDefault();
+        // Redirect to a new page
+        window.location.href = "game/uvbrowser.html";
+
+        let url = document.getElementById("game-search").value; // if no periods are detected in the input, search google instead
+        localStorage.setItem("value", url);
+
+    }
+});
+  //   console.log("IT WORKS")
+  // event.preventDefault();
+  // window.navigator.serviceWorker
+  //   .register("./sw.js", {
+  //     scope: __uv$config.prefix,
+  //   })
+  //   .then(() => {
+  //     let url = input.value.trim();
+  //     if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
+  //     else if (!(url.startsWith("https://") || url.startsWith("http://")))
+  //       url = "http://" + url;
+  //     sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
+  //     location.href = "go";
+  //   });
 
 
 // function go(value) {

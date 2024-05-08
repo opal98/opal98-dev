@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "@titaniumnetwork-dev/ultraviolet": "^3.0.2",
+    "@tomphttp/bare-server-node": "^2.0.3",
     "express": "^4.19.2"
-  }
+  },
+  "type": "module"
 }
