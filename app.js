@@ -34,6 +34,11 @@ server.on("upgrade", (req, socket, head) => {
     }
 });
 
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(process.cwd(), '/public/games.html'));
+});
+
 let port = parseInt(process.env.PORT || "");
 
 if (isNaN(port)) port = 3000; // set your port
