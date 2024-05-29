@@ -9,7 +9,9 @@ const bare = createBareServer("/bare/");
 const app = express();
 const publicPath = "public"; // if you renamed your directory to something else other than public
 
-app.use(express.static(publicPath));
+// app.use(express.static(publicPath));
+
+app.use('/', express.static(publicPath)) 
 
 app.use((req, res) => {
     res.status(404);
